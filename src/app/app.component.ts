@@ -1,5 +1,5 @@
 import { Component, ViewChild } from '@angular/core';
-import { ApiEditorComponent, EditableApiDefinition } from 'apicurio-design-studio';
+import { ApiEditorComponent, ApiDefinition } from 'apicurio-design-studio';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +14,6 @@ export class AppComponent {
   title = 'app';
 
   constructor() {
-    this.apiEditor.api = new EditableApiDefinition();
+    this.apiEditor.api = new ApiDefinition();
   };
 }
