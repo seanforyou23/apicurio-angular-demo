@@ -9,11 +9,9 @@ import { ApiEditorComponent, ApiDefinition } from 'apicurio-design-studio';
 
 
 export class AppComponent {
-  @ViewChild('apiEditor')
-  apiEditor: ApiEditorComponent;
   title = 'app';
 
   constructor() {
-    this.apiEditor.api = new ApiDefinition();
+    // Something will be here soon
   };
 }
