@@ -365,9 +365,9 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
-apicurio-design-studio@^0.2.11-2:
-  version "0.2.11-2"
-  resolved "https://registry.yarnpkg.com/apicurio-design-studio/-/apicurio-design-studio-0.2.11-2.tgz#17afca8f5ff05988fb10439ee69f109d47864502"
+apicurio-design-studio@^0.2.11-3:
+  version "0.2.11-3"
+  resolved "https://registry.yarnpkg.com/apicurio-design-studio/-/apicurio-design-studio-0.2.11-3.tgz#20f49848d8f4cab04f896f6b54facbc2ec5b8e30"
   dependencies:
     tslib "^1.7.1"
 

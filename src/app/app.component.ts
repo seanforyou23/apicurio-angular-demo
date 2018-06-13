@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import { ApiEditorComponent, ApiDefinition } from 'apicurio-design-studio';
+import {OtCommand} from 'oai-ts-commands';
 
 @Component({
   selector: 'app-root',
@@ -9,20 +10,19 @@ import { ApiEditorComponent, ApiDefinition } from 'apicurio-design-studio';
 
 
 export class AppComponent {
+
+  @ViewChild('_apiEditor') _apiEditor: ApiEditorComponent;
   title = 'app';
+  apiDef: ApiDefinition;
 
   constructor() {
-    // Something will be here soon
-  }
-
-  public apiDefinition(): ApiDefinition {
-    let def: ApiDefinition = new ApiDefinition();
-    def.createdBy = 'user1';
-    def.createdOn = new Date();
-    def.tags = [];
-    def.description = '';
-    def.id = 'api-1';
-    def.spec = {
+    this.apiDef = new ApiDefinition();
+    this.apiDef.createdBy = 'user1';
+    this.apiDef.createdOn = new Date();
+    this.apiDef.tags = [];
+    this.apiDef.description = '';
+    this.apiDef.id = 'api-1';
+    this.apiDef.spec = {
       'openapi': '3.0.0',
       'info': {
         'title': 'Simple OAI 3.0.0 API',
@@ -82,10 +82,17 @@ export class AppComponent {
         }
       ]
     };
-    return def;
   }
 
-  public onUserChange(event): void {
-    console.log('Something happened! ' + JSON.stringify(event));
+  public apiDefinition(): ApiDefinition {
+    return this.apiDef;
+  }
+
+  public onUserSelection(selection: string): void {
+    console.log('User selection changed: ', selection);
+  }
+
+  public onUserChange(command: OtCommand): void {
+    console.log('Something happened! ' + JSON.stringify(command));
   }
 }
