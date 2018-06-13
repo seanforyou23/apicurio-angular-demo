@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { ApiEditorComponent, ApiDefinition } from 'apicurio-design-studio';
 
 @Component({
@@ -83,5 +83,9 @@ export class AppComponent {
       ]
     };
     return def;
+  }
+
+  public onUserChange(event): void {
+    console.log('Something happened! ' + JSON.stringify(event));
   }
 }

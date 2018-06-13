@@ -19,7 +19,7 @@
 </ul>
 <div class="row row-cards-pf">
   <div class="card-pf">
-    <api-editor [api]="apiDefinition()"></api-editor>
+    <api-editor [api]="apiDefinition()" (onSelectionChanged)="onUserChange($event)"></api-editor>
   </div>
 </div>
 
