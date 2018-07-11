@@ -63,7 +63,7 @@ export class AppComponent {
           'Basic': {
             'type': 'http',
             'description': 'Basic auth.',
-            'scheme': 'Basic'
+            'scheme': 'basic'
           }
         }
       },
