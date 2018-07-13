@@ -1,6 +1,10 @@
-import {Component, ViewChild} from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ApiEditorComponent, ApiDefinition } from 'apicurio-design-studio';
-import {OtCommand} from 'oai-ts-commands';
+import { OtCommand } from 'oai-ts-commands';
+import { WindowRef } from './window-ref';
+
+// import { Yaml } from 'yamljs';
+import * as YAML from 'yamljs';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +19,8 @@ export class AppComponent {
   title = 'app';
   apiDef: ApiDefinition;
 
-  constructor() {
+  constructor(private winRef: WindowRef) {
+    this.winRef.nativeWindow.dump = YAML.dump;
     this.apiDef = new ApiDefinition();
     this.apiDef.createdBy = 'user1';
     this.apiDef.createdOn = new Date();

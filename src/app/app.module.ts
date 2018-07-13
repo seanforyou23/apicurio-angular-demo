@@ -1,10 +1,11 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {ApicurioCommonComponentsModule, ApicurioEditorModule} from 'apicurio-design-studio';
+import { ApicurioCommonComponentsModule, ApicurioEditorModule } from 'apicurio-design-studio';
 
 import { AppComponent } from './app.component';
-import {BsDropdownModule, ModalModule} from 'ngx-bootstrap';
-import {FormsModule} from '@angular/forms';
+import { BsDropdownModule, ModalModule } from 'ngx-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { WindowRef } from './window-ref';
 
 
 @NgModule({
@@ -19,7 +20,7 @@ import {FormsModule} from '@angular/forms';
     ModalModule.forRoot(),
     BsDropdownModule.forRoot()
   ],
-  providers: [],
+  providers: [WindowRef],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
