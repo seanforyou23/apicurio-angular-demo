@@ -2,8 +2,6 @@ import { Component, ViewChild } from '@angular/core';
 import { ApiEditorComponent, ApiDefinition } from 'apicurio-design-studio';
 import { OtCommand } from 'oai-ts-commands';
 import { WindowRef } from './window-ref';
-
-// import { Yaml } from 'yamljs';
 import * as YAML from 'yamljs';
 
 @Component({
