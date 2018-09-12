@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ViewEncapsulation, OnInit } from '@angular/core';
 import { ApiEditorComponent, ApiDefinition } from 'apicurio-design-studio';
 import { OtCommand } from 'oai-ts-commands';
 import { WindowRef } from './window-ref';
@@ -7,11 +7,12 @@ import * as YAML from 'yamljs';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  encapsulation: ViewEncapsulation.Native
 })
 
 
-export class AppComponent {
+export class AppComponent implements OnInit {
 
   @ViewChild('_apiEditor') _apiEditor: ApiEditorComponent;
   title = 'app';
@@ -85,6 +86,10 @@ export class AppComponent {
         }
       ]
     };
+  }
+
+  public ngOnInit(): void {
+    console.log('Apicurio: ngOnInit');
   }
 
   public apiDefinition(): ApiDefinition {
